@@ -18,22 +18,37 @@ function NewsForm() {
     setLoading(true)
     setSuccess(false)
 
-    const { error } = await supabase.from('news').insert({
+    // Check session first
+    const { data: { session } } = await supabase.auth.getSession()
+    console.log('Session:', session)
+
+    if (!session) {
+      alert('You are not logged in!')
+      setLoading(false)
+      return
+    }
+
+    const { data, error } = await supabase.from('news').insert({
       title,
       content,
       category,
       is_published: true,
     })
 
-    if (!error) {
-      setSuccess(true)
-      setTitle('')
-      setContent('')
-      setCategory('general')
+    console.log('Insert result:', data, error)
+
+    if (error) {
+      alert('Error: ' + error.message)
+      setLoading(false)
+      return
     }
+
+    setSuccess(true)
+    setTitle('')
+    setContent('')
+    setCategory('general')
     setLoading(false)
   }
-
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <h2 className="text-2xl font-bold text-white">Create News Post</h2>
