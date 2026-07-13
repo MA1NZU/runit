@@ -15,9 +15,9 @@ export default async function PatchNotesPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
-      <h1 className="text-4xl font-bold text-white mb-8">📋 Patch Notes</h1>
+      <h1 className="text-4xl font-bold text-white mb-8">Patch Notes</h1>
       {patches.length === 0 ? (
-        <p className="text-gray-400">No patch notes yet. Check back soon!</p>
+        <p className="text-gray-400">No patch notes yet.</p>
       ) : (
         <div className="flex flex-col gap-6">
           {patches.map((patch) => (
