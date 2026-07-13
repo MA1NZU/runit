@@ -31,12 +31,12 @@ export default async function BugsPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
-      <h1 className="text-4xl font-bold text-white mb-2">🐛 Known Bugs</h1>
+      <h1 className="text-4xl font-bold text-white mb-2">Known Bugs</h1>
       <p className="text-gray-400 mb-8">We are aware of these issues and working on fixes.</p>
 
       <h2 className="text-2xl font-semibold text-white mb-4">Active Issues</h2>
       {activeBugs.length === 0 ? (
-        <p className="text-gray-400 mb-8">No active bugs right now! 🎉</p>
+        <p className="text-gray-400 mb-8">No bugs right now!</p>
       ) : (
         <div className="flex flex-col gap-4 mb-10">
           {activeBugs.map((bug) => (
@@ -61,7 +61,7 @@ export default async function BugsPage() {
         </div>
       )}
 
-      <h2 className="text-2xl font-semibold text-white mb-4">✅ Recently Fixed</h2>
+      <h2 className="text-2xl font-semibold text-white mb-4">Recently Fixed</h2>
       {fixedBugs.length === 0 ? (
         <p className="text-gray-400">No fixed bugs yet.</p>
       ) : (
