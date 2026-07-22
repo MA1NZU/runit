@@ -1,4 +1,5 @@
 import { supabase, PatchNote } from '@/lib/supabase'
+export const revalidate = 0
 
 async function getPatchNotes() {
   const { data, error } = await supabase
