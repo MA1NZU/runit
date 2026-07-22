@@ -2,6 +2,7 @@ import { supabase, News } from '@/lib/supabase'
 import { createClient } from '@supabase/supabase-js'
 import NewsCard from '@/components/NewsCard'
 import { cookies } from 'next/headers'
+export const revalidate = 0
 
 async function getNews() {
   const { data, error } = await supabase
