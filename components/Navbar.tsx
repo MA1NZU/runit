@@ -1,25 +1,54 @@
+'use client'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { supabase } from '@/lib/supabase'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
+  const [isAdmin, setIsAdmin] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsAdmin(!!session)
+    })
+  }, [pathname])
+
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/news', label: 'News' },
+    { href: '/bugs', label: 'Known Bugs' },
+    { href: '/patch-notes', label: 'Patch Notes' },
+  ]
+
   return (
-    <nav className="bg-gray-900 border-b border-gray-700 px-6 py-4">
+    <nav className="bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b-2 border-yellow-400 px-6 py-4 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-yellow-400">
-          RUNIT
+        <Link href="/" className="flex items-center gap-2">
+          <span className="text-3xl font-fortnite font-bold text-yellow-400 tracking-wider uppercase yellow-glow">
+            RUNIT
+          </span>
         </Link>
-        <div className="flex gap-6">
-          <Link href="/" className="text-gray-300 hover:text-white transition">
-            Home
-          </Link>
-          <Link href="/news" className="text-gray-300 hover:text-white transition">
-            News
-          </Link>
-          <Link href="/bugs" className="text-gray-300 hover:text-white transition">
-            Known Bugs
-          </Link>
-          <Link href="/patch-notes" className="text-gray-300 hover:text-white transition">
-            Patch Notes
-          </Link>
+        <div className="flex items-center gap-6">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`font-semibold uppercase tracking-wide text-sm transition hover:text-yellow-400 ${
+                pathname === link.href ? 'text-yellow-400' : 'text-gray-300'
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-lg text-sm uppercase tracking-wide hover:bg-yellow-300 transition"
+            >
+              Admin
+            </Link>
+          )}
         </div>
       </div>
     </nav>
