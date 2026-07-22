@@ -4,34 +4,38 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* HERO */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-transparent pointer-events-none"/>
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none"/>
-        <p className="text-yellow-400 font-bold uppercase tracking-widest text-sm mb-4">
-          Official Website
-        </p>
-        <h1 className="text-8xl font-fortnite font-bold text-white uppercase tracking-wider mb-4 drop-shadow-lg">
-          RUNIT
-        </h1>
-        <p className="text-gray-400 text-xl max-w-xl mb-10">
-          The ultimate UEFN experience. Jump in, run fast, and dominate.
-        </p>
-        <div className="flex gap-4 flex-wrap justify-center">
-          <a
-            href="https://www.fortnite.com"
-            target="_blank"
-            className="bg-yellow-400 text-gray-900 font-bold px-8 py-3 rounded-lg text-lg uppercase tracking-wide hover:bg-yellow-300 transition yellow-glow"
-          >
-            Play Now
-          </a>
-          <Link
-            href="/news"
-            className="bg-gray-800 border border-gray-600 text-white font-bold px-8 py-3 rounded-lg text-lg uppercase tracking-wide hover:bg-gray-700 transition"
-          >
-            Latest News
-          </Link>
-        </div>
-      </section>
+<section className="relative flex flex-col items-center justify-center text-center px-6 py-32 overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-transparent pointer-events-none"/>
+  <p className="text-yellow-400 font-bold uppercase tracking-widest text-sm mb-6">
+    Official Website
+  </p>
+  <Image
+    src="/logo.png"
+    alt="RUNIT Logo"
+    width={500}
+    height={250}
+    className="object-contain mb-6 drop-shadow-2xl"
+    priority
+  />
+  <p className="text-gray-400 text-xl max-w-xl mb-10">
+    The ultimate UEFN experience. Jump in, run fast, and dominate.
+  </p>
+  <div className="flex gap-4 flex-wrap justify-center">
+    <a
+      href="https://www.fortnite.com"
+      target="_blank"
+      className="bg-yellow-400 text-gray-900 font-bold px-8 py-3 rounded-lg text-lg uppercase tracking-wide hover:bg-yellow-300 transition yellow-glow"
+    >
+      Play Now
+    </a>
+    <Link
+      href="/news"
+      className="bg-gray-800 border border-gray-600 text-white font-bold px-8 py-3 rounded-lg text-lg uppercase tracking-wide hover:bg-gray-700 transition"
+    >
+      Latest News
+    </Link>
+  </div>
+</section>
 
       {/* STATS BAR */}
       <section className="bg-yellow-400 py-4">
