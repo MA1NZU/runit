@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-fortnite {
+  font-family: 'Burbank Big Condensed', 'Inter', sans-serif;
+}
+
+.bg-fortnite {
+  background: linear-gradient(135deg, #0a0a1a 0%, #0d1b3e 50%, #0a0a1a 100%);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 179, 237, 0.3);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+.yellow-glow {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px #000;
+}
