@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-900 text-white min-h-screen">
+      <body className="bg-fortnite text-white min-h-screen">
         <Navbar />
         {children}
       </body>
