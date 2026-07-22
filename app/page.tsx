@@ -22,7 +22,7 @@ export default function Home() {
   </p>
   <div className="flex gap-4 flex-wrap justify-center">
     <a
-      href="https://www.fortnite.com"
+      href="http://fortnite.com/@mainz/7268-0399-1161"
       target="_blank"
       className="bg-yellow-400 text-gray-900 font-bold px-8 py-3 rounded-lg text-lg uppercase tracking-wide hover:bg-yellow-300 transition yellow-glow"
     >
@@ -41,10 +41,10 @@ export default function Home() {
       <section className="bg-yellow-400 py-4">
         <div className="max-w-6xl mx-auto px-6 flex justify-around flex-wrap gap-4">
           {[
-            { label: 'Island Code', value: 'XXXX-XXXX-XXXX' },
+            { label: 'Island Code', value: '7268-0399-1161' },
             { label: 'Version', value: 'v1.0.0' },
             { label: 'Status', value: '🟢 Online' },
-            { label: 'Players', value: '1-16' },
+            { label: 'Players', value: '1-24' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-gray-900 text-xs font-bold uppercase tracking-wide">{stat.label}</p>
