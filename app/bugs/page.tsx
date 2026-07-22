@@ -21,7 +21,7 @@ export default async function BugsPage() {
     <div className="max-w-4xl mx-auto px-6 py-10">
       <div className="mb-10">
         <p className="text-yellow-400 font-bold uppercase tracking-widest text-sm mb-2">
-          🐛 Transparency
+          Investigating
         </p>
         <h1 className="text-5xl font-fortnite font-bold text-white uppercase tracking-wide">
           Known Bugs
@@ -34,7 +34,7 @@ export default async function BugsPage() {
       <h2 className="text-2xl font-bold text-white mb-4">Active Issues</h2>
       {activeBugs.length === 0 ? (
         <div className="bg-green-900 border border-green-500 rounded-xl p-6 mb-10 text-center">
-          <p className="text-green-400 text-xl font-bold">🎉 No active bugs right now!</p>
+          <p className="text-green-400 text-xl font-bold">No active bugs right now</p>
         </div>
       ) : (
         <div className="flex flex-col gap-4 mb-10">
@@ -44,7 +44,7 @@ export default async function BugsPage() {
         </div>
       )}
 
-      <h2 className="text-2xl font-bold text-white mb-4">✅ Recently Fixed</h2>
+      <h2 className="text-2xl font-bold text-white mb-4">Recently Fixed</h2>
       {fixedBugs.length === 0 ? (
         <p className="text-gray-400">No fixed bugs yet.</p>
       ) : (
