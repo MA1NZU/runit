@@ -1,5 +1,6 @@
 import { supabase, Bug } from '@/lib/supabase'
 import BugCard from '@/components/BugCard'
+export const revalidate = 0
 
 async function getBugs() {
   const { data, error } = await supabase
